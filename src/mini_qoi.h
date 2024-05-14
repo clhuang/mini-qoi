@@ -61,7 +61,7 @@ typedef union {
 } mqoi_rgba_t;
 
 typedef struct {
-    uint8_t head;
+    uint32_t head;
 
     uint8_t magic[4];
     uint8_t width[4]; // big-endian width
