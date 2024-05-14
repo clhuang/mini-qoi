@@ -44,6 +44,7 @@ Initializes an mQOI image descriptor object.
 */
 void mqoi_desc_init(mqoi_desc_t * desc) {
     memset(desc, 0, sizeof(mqoi_desc_t));
+    desc->head = 3;
 }
 
 /* 
@@ -90,7 +91,7 @@ uint8_t mqoi_desc_verify(mqoi_desc_t * desc, uint32_t * w, uint32_t * h) {
 Returns true when the mQOI image descriptor object is completely populated.
 */
 MQOI_INLINE bool mqoi_desc_done(const mqoi_desc_t * desc) {
-    return desc->head >= sizeof(mqoi_desc_t) - 1;
+    return desc->head >= sizeof(mqoi_desc_t) - 4;
 }
 
 // ==== mqoi_dec_t ====
